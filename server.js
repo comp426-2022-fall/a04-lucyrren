@@ -36,12 +36,13 @@ app.post('/app/roll/', (req, res) => {
     res.status(200).send(JSON.stringify(roll(sides, dice, rolls)));
 });
 
-//endpoint at /app/roll/:sides for roll that takes in the number of sides
+//endpoint at /app/roll/:sides for roll that takes in a sides parameter
 app.get('/app/roll/:sides', (req, res) => {
     sides = parseInt(req.params.sides);
     res.status(200).send(JSON.stringify(roll(sides, 2, 1)));
 });
 
+//endpoint at /app/roll/:sides/:dice that takes in sides and dice parameter
 app.get('/app/roll/:sides/:dice/', (req, res) => {
     sides = parseInt(req.params.sides);
     dice = parseInt(req.params.dice)
