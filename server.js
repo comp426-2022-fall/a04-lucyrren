@@ -5,6 +5,7 @@ import express from "express";
 //parse arguments 
 let args = minimist(process.argv.slice(2));
 
+//sets port to port argument or default 5000
 const port = args.port || 5000;
 
 let app = express();
