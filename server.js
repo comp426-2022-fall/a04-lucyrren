@@ -28,6 +28,7 @@ app.get('/app/roll', (req, res) => {
 
 let sides, dice, rolls;
 
+//endpoint at /app/roll for roll with JSON or URL encoded data body
 app.post('/app/roll/', (req, res) => {
     sides = parseInt(req.body.sides);
     dice = parseInt(req.body.dice);
