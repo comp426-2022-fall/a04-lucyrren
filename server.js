@@ -49,6 +49,7 @@ app.get('/app/roll/:sides/:dice/', (req, res) => {
     res.status(200).send(JSON.stringify(roll(sides, dice, 1)));
 });
 
+//endpoint at /app/roll/:sides/:dice/:rolls that takes in sides, dice, and roll parameter
 app.get('/app/roll/:sides/:dice/:rolls', (req, res) => {
     sides = parseInt(req.params.sides);
     dice = parseInt(req.params.dice);
