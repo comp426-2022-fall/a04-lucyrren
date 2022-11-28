@@ -57,6 +57,7 @@ app.get('/app/roll/:sides/:dice/:rolls', (req, res) => {
     res.status(200).send(JSON.stringify(roll(sides, dice, rolls)));
 });
 
+//returns 404 when endpoint is not defined
 app.get('*', (req, res) => {
     res.status(404).send('404 NOT FOUND');
 });
