@@ -10,6 +10,8 @@ const port = args.port || 5000;
 
 let app = express();
 app.use(express.urlencoded({extended: true}));
+
+//listen on designated port
 app.listen(port);
 
 app.get('/app', (req, res) => {
