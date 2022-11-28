@@ -9,7 +9,9 @@ let args = minimist(process.argv.slice(2));
 const port = args.port || 5000;
 
 let app = express();
-app.use(express.urlencoded({extended: true}));
+
+//accept either JSON or URL Encoded
+app.use(urlencoded({extended: true}));
 
 //listen on designated port
 app.listen(port);
@@ -19,6 +21,7 @@ app.get('/app', (req, res) => {
     res.status(200).send('200 OK');
 });
 
+//endpoint at /app/roll for a default roll
 app.get('/app/roll', (req, res) => {
     res.status(200).send(JSON.stringify(roll(6, 2, 1)));
 });
