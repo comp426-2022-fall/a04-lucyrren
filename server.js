@@ -18,12 +18,18 @@ app.get('/app/roll', (req, res) => {
     res.status(200).send(JSON.stringify(roll(6, 2, 1)));
 });
 
+let sides, dice, rolls;
+
 app.post('/app/roll/', (req, res) => {
-    res.status(200).send(JSON.stringify(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls))));
+    sides = parseInt(req.body.sides);
+    dice = parseInt(req.body.dice);
+    rolls = parseInt(req.body.rolls);
+    res.status(200).send(JSON.stringify(roll(sides, dice, rolls)));
 });
 
 app.get('/app/roll/:sides', (req, res) => {
-    res.status(200).send(JSON.stringify(roll(parseInt(req.params.sides), 2, 1)));
+    sides = parseInt(req.params.sides);
+    res.status(200).send(JSON.stringify(roll(sides, 2, 1)));
 });
 
 app.get('/app/roll/:sides/:dice/', (req, res) => {
