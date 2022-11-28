@@ -11,7 +11,7 @@ const port = args.port || 5000;
 let app = express();
 
 //accept either JSON or URL Encoded
-app.use(urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
 
 //listen on designated port
 app.listen(port);
